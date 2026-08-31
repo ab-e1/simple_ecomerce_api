@@ -8,5 +8,5 @@ export const signToken = (payload) => {
 };
 
 export const verifyToken = (token) => {
-  returnjwt.verify(token, jwtSecret);
+  return jwt.verify(token, jwtSecret);
 };
