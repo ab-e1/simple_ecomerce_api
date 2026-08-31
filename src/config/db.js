@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { mongoDbUri } from "./loadEnv";
+import { mongoDbUri } from "./loadEnv.js";
 
 export const connectDb = async () => {
   if (!mongoDbUri) {
