@@ -1,7 +1,8 @@
-export const success = (res, data, statusCode = 200) => {
+export const success = (res, data, statusCode = 200, token) => {
   res.status(statusCode).json({
     ok: true,
     data,
+    token,
   });
 };
 export const failure = (res, error, statusCode = 400) => {
@@ -9,4 +10,13 @@ export const failure = (res, error, statusCode = 400) => {
     ok: false,
     error,
   });
+};
+
+export const visibleInfo = (data) => {
+  return {
+    name: data.name,
+    email: data.email,
+    role: data.role,
+    emailVerified: data.emailVerified,
+  };
 };
