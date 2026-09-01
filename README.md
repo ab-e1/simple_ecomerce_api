@@ -7,18 +7,20 @@ A REST API for a basic e-commerce app: auth, products, cart, and orders. Built w
 ```bash
 bun install
 cp .env.example .env   # fill in your values
-bun run dev
+bun run dev  or npm run dev #during development run this
+npm start or bun start  # both will work to run the code
+
 ```
 
 Server runs on `http://localhost:3000`.
 
 ## Environment variables
 
-| Variable | Description |
-| --- | --- |
-| `PORT` | Server port (default 3000) |
-| `MONGO_URI` | MongoDB connection string |
-| `JWT_SECRET` | Secret used to sign/verify tokens |
+| Variable         | Description                             |
+| ---------------- | --------------------------------------- |
+| `PORT`           | Server port (default 3000)              |
+| `MONGO_URI`      | MongoDB connection string               |
+| `JWT_SECRET`     | Secret used to sign/verify tokens       |
 | `MONGO_PASSWORD` | MongoDB password (if your URI needs it) |
 
 ## API docs
@@ -29,20 +31,20 @@ Swagger UI is available at [http://localhost:3000/api-docs](http://localhost:300
 
 All routes except `register` and `login` require a `Bearer` token in the `Authorization` header.
 
-| Method | Path | Description |
-| --- | --- | --- |
-| POST | `/api/auth/register` | Register a user (role defaults to `buyer`) |
-| POST | `/api/auth/login` | Login, returns a JWT |
-| GET | `/api/products` | List products (paginated with `page` / `limit`) |
-| GET | `/api/products/:id` | Get one product |
-| POST | `/api/products` | Create a product (admin/seller) |
-| PATCH | `/api/products/:id` | Update a product (admin) |
-| DELETE | `/api/products/:id` | Delete a product (admin) |
-| GET | `/api/cart` | Get your cart |
-| POST | `/api/cart/item` | Add a product to your cart (`productId`, `quantity`) |
-| DELETE | `/api/cart/item/:id` | Remove a product from your cart |
-| GET | `/api/order` | List your orders |
-| POST | `/api/order/create` | Create an order from your cart (clears the cart) |
+| Method | Path                 | Description                                          |
+| ------ | -------------------- | ---------------------------------------------------- |
+| POST   | `/api/auth/register` | Register a user (role defaults to `buyer`)           |
+| POST   | `/api/auth/login`    | Login, returns a JWT                                 |
+| GET    | `/api/products`      | List products (paginated with `page` / `limit`)      |
+| GET    | `/api/products/:id`  | Get one product                                      |
+| POST   | `/api/products`      | Create a product (admin/seller)                      |
+| PATCH  | `/api/products/:id`  | Update a product (admin)                             |
+| DELETE | `/api/products/:id`  | Delete a product (admin)                             |
+| GET    | `/api/cart`          | Get your cart                                        |
+| POST   | `/api/cart/item`     | Add a product to your cart (`productId`, `quantity`) |
+| DELETE | `/api/cart/item/:id` | Remove a product from your cart                      |
+| GET    | `/api/order`         | List your orders                                     |
+| POST   | `/api/order/create`  | Create an order from your cart (clears the cart)     |
 
 ## Auth flow
 
