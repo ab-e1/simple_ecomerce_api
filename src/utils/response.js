@@ -14,6 +14,7 @@ export const failure = (res, error, statusCode = 400) => {
 
 export const visibleInfo = (data) => {
   return {
+    _id: data._id,
     name: data.name,
     email: data.email,
     role: data.role,
