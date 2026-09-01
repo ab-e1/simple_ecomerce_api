@@ -22,7 +22,7 @@ export const register = async (data) => {
     password: hashPassword,
     role: "buyer",
   });
-  const token = signToken(dataWithoutPassword);
+  const token = signToken(visibleInfo(user));
 
   return {
     ok: true,
